@@ -1,0 +1,34 @@
+<!-- agent-list.component.html -->
+<div class="agent-list-container">
+    <h2>Agent List</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Agent ID</th>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>Qualification</th>
+          <th>Email</th>
+          <th>MobileNo</th>
+          <th>CommissionEarned</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let agent of agents">
+          <td>{{ agent.agentId }}</td>
+          <td>{{ agent.firstName }}</td>
+          <td>{{ agent.lastName }}</td>
+          <td>{{agent.qualification}}</td>
+          <td>{{ agent.email }}</td>
+          <td>{{ agent.mobileNo }}</td>
+          <td>{{ agent.commissionEarned }}</td>
+          <td>
+            <button (click)="editAgent(agent.AgentId)">Edit</button>
+            <button (click)="deleteAgent(agent.AgentId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
