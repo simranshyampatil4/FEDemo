@@ -10,6 +10,7 @@
           <th>Qualification</th>
           <th>Email</th>
           <th>MobileNo</th>
+          <th>UserId</th>
           <th>CommissionEarned</th>
           <th>Actions</th>
         </tr>
@@ -22,6 +23,7 @@
           <td>{{agent.qualification}}</td>
           <td>{{ agent.email }}</td>
           <td>{{ agent.mobileNo }}</td>
+          <td>{{ agent.userId }}</td>
           <td>{{ agent.commissionEarned }}</td>
           <td>
             <button (click)="editAgent(agent.AgentId)">Edit</button>

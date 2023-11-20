@@ -14,6 +14,8 @@ import { ResolveClaimComponent } from './resolve-claim/resolve-claim.component';
 import { DocumentverificationComponent } from './documentverification/documentverification.component';
 import { UpdateDocumentComponent } from './update-document/update-document.component';
 import { AgentListComponent } from './agent-list/agent-list.component';
+import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -29,6 +31,8 @@ const routes: Routes = [
   {path: 'document-verification', component: DocumentverificationComponent },
   { path: 'update-document/:id', component: UpdateDocumentComponent },
   { path: 'agent-list', component: AgentListComponent },
+  {path: 'add-customer', component: AddCustomerComponent},
+  { path: 'customer-list', component: CustomerListComponent },
   
   {
     path:"weather",

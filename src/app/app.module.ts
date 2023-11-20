@@ -19,6 +19,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AddagentComponent } from './addagent/addagent.component';
 import { JwtInterceptor } from './jwt.interceptor';
 import { AgentListComponent } from './agent-list/agent-list.component';
+import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { CustomerListComponent } from './customer-list/customer-list.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +32,13 @@ import { AgentListComponent } from './agent-list/agent-list.component';
     LoginComponent,
     InsurancePlansComponent,
     ContactUsComponent,
+    AddCustomerComponent,
     FooterComponent,
     RegisterComponent,
     ProtectionPlanComponent,
     WeatherInfoComponent,
-    AgentListComponent
+    AgentListComponent,
+    CustomerListComponent,
   ],
   imports: [
     BrowserModule,
