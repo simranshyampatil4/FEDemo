@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+// src/app/add-agent/add-agent.component.ts
+
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomerService } from '../services/customer.service';
 import { Customer } from '../models/customer';
 import { lastValueFrom } from 'rxjs';
@@ -7,35 +9,41 @@ import { lastValueFrom } from 'rxjs';
 @Component({
   selector: 'app-add-customer',
   templateUrl: './add-customer.component.html',
-  styleUrl: './add-customer.component.css'
+  styleUrls: ['./add-customer.component.css']
 })
-export class AddCustomerComponent {
-  newCustomer: Customer = {
-    CustomerId: 0,
-    FirstName: '',
-    LastName: '',
-    Email: '',
-    MobileNo: '',
-    State:'',
-    City:'',
-    Nominee:'',
-    NomineeRelation:'',
-    UserId: 0,
-    AgentId:0,
-    // IsActive: true, // Uncomment this line if needed
-  };
+export class AddCustomerComponent implements OnInit {
+  customerForm!: FormGroup; // Note the non-null assertion operator here
 
-  constructor(private customerService: CustomerService) {}
+  constructor(
+    private fb: FormBuilder,
+    private customerService: CustomerService
+  ) {}
+
+  ngOnInit(): void {
+    this.customerForm = this.fb.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      mobileNo: ['', Validators.required],
+      state: ['', Validators.required],
+      city: ['', Validators.required],
+      nominee: ['', Validators.required],
+      nomineeRelation: ['', Validators.required],
+      userId: [0, Validators.required],
+      agentId: [0, Validators.required],
+    });
+  }
 
   async addCustomer(): Promise<void> {
     try {
-      const addedCustomer = await lastValueFrom(this.customerService.addCustomer(this.newCustomer));
+      const addedCustomer = await lastValueFrom(this.customerService.addCustomer(this.customerForm.value));
       console.log('Customer added:', addedCustomer);
 
       // Display an alert to the user
       alert('Customer added successfully!');
 
       // Optionally, you can reset the form or perform any other actions here
+      this.customerForm.reset();
     } catch (error) {
       console.error('Error adding customer:', error);
 

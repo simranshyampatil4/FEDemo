@@ -1,44 +1,41 @@
 <!-- src/app/add-agent/add-agent.component.html -->
 
 <div class="add-customer-container">
-    <h2>Add Customer</h2>
-    <form (ngSubmit)="addCustomer()">
+  <h2>Add Customer</h2>
+  <form [formGroup]="customerForm" (ngSubmit)="addCustomer()">
       <label for="firstName">First Name:</label>
-      <input id="firstName" [(ngModel)]="newCustomer.FirstName" name="firstName" required>
-  
+      <input id="firstName"  formControlName="firstName" required>
+
       <label for="lastName">Last Name:</label>
-      <input id="lastName" [(ngModel)]="newCustomer.LastName" name="lastName" required>
-  
+      <input id="lastName" formControlName="lastName" required>
+
       <label for="email">Email:</label>
-      <input id="email" [(ngModel)]="newCustomer.Email" name="email" type="email" required>
-  
+      <input id="email" formControlName="email" type="email" required>
+
       <label for="mobileNo">Mobile Number:</label>
-      <input id="mobileNo" [(ngModel)]="newCustomer.MobileNo" name="mobileNo" required>
+      <input id="mobileNo" formControlName="mobileNo" required>
 
       <label for="state">State:</label>
-      <input id="state" [(ngModel)]="newCustomer.State" name="state" required>
+      <input id="state" formControlName="state" required>
 
       <label for="city">City:</label>
-      <input id="city" [(ngModel)]="newCustomer.City" name="city" required>
+      <input id="city" formControlName="city" required>
 
       <label for="nominee">Nominee Name:</label>
-      <input id="nominee" [(ngModel)]="newCustomer.Nominee" name="nominee" required>
+      <input id="nominee" formControlName="nominee" required>
 
       <label for="nomineeRelation">Nominee Relation:</label>
-      <input id="nomineeRelation" [(ngModel)]="newCustomer.NomineeRelation" name="nomineeRelation" required>
-  
-      <label for="userId">User ID:</label>
-      <input id="userId" [(ngModel)]="newCustomer.UserId" name="userId" type="number" required>
+      <input id="nomineeRelation" formControlName="nomineeRelation" required>
 
-      <label for="agentId">Agent ID:</label>
-      <input id="agentId" [(ngModel)]="newCustomer.AgentId" name="agentId" type="number" required>
-  
-  
-      <!-- Uncomment the following lines if IsActive is needed -->
-      <!-- <label for="isActive">Is Active:</label>
-      <input id="isActive" [(ngModel)]="newAgent.IsActive" name="isActive" type="checkbox"> -->
-  
-      <button type="submit">Add Agent</button>
-    </form>
-  </div>
-  
+      <!-- <input id="userId" [(ngModel)]="customerForm.get('userId')!.value" name="userId" type="hidden" required>
+      <input id="agentId" [(ngModel)]="customerForm.get('agentId')!.value" name="agentId" type="hidden" required> -->
+
+      <label for="userId">UserId:</label>
+      <input id="userId" formControlName="userId"  required>
+
+      <label for="agentId">agentId:</label>
+      <input id="agentId" formControlName="agentId"  required>
+
+      <button type="submit">Add Customer</button>
+  </form>
+</div>

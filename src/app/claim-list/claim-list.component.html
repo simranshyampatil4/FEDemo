@@ -1,0 +1,34 @@
+<!-- agent-list.component.html -->
+<div class="claim-list-container">
+    <h2>Claim List</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Claim ID</th>
+          <th>Claim Amount</th>
+          <th>Bank Account Number</th>
+          <th>Bank Ifsc Code</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Policy No</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let claim of claims">
+          <td>{{ claim.claimId }}</td>
+          <td>{{ claim.claimAmount }}</td>
+          <td>{{ claim.bankAccountNumber }}</td>
+          <td>{{ claim.bankIfscCode }}</td>
+          <td>{{ claim.date }}</td>
+          <td>{{ claim.status}}</td>
+          <td>{{ claim.policyNo}}</td>
+          <td>
+            <button (click)="editClaim()">Edit</button>
+            <button (click)="deleteClaim(claim.ClaimId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

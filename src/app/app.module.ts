@@ -21,6 +21,9 @@ import { JwtInterceptor } from './jwt.interceptor';
 import { AgentListComponent } from './agent-list/agent-list.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
+import { ClaimComponent } from './claim/claim.component';
+import { ClaimListComponent } from './claim-list/claim-list.component';
+import { ClaimResolveComponent } from './claim-resolve/claim-resolve.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,9 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
     WeatherInfoComponent,
     AgentListComponent,
     CustomerListComponent,
+    ClaimComponent,
+    ClaimListComponent,
+    ClaimResolveComponent
   ],
   imports: [
     BrowserModule,

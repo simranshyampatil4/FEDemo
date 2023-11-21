@@ -8,6 +8,6 @@ export interface Claim {
     Date: Date;
     Status: string;
     PolicyNo: string;
-    IsActive: boolean;
+    //IsActive: boolean;
   }
   

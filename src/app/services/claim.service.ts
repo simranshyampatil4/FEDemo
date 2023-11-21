@@ -9,35 +9,27 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ClaimService {
-  private apiUrl = 'localhost:yourport/api';
- 
+  private apiUrl = 'https://localhost:7029/api'; 
+
   constructor(private http: HttpClient) {}
 
-
-   token = localStorage.getItem('token');
-
-     headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${this.token}`
-    });
-
-     options = { headers: this.headers };
-
-
   getAllClaims(): Observable<Claim[]> {
-    return this.http.get<Claim[]>(`${this.apiUrl}/claim`, this.options);
+    return this.http.get<Claim[]>(`${this.apiUrl}/Claim/`);
   }
-  // updateClaim(claimId: number, updatedClaim: Partial<Claim>): Observable<Claim | null> {
-  //   const index = this.allClaims.findIndex(claim => claim.ClaimId === claimId);
-  //   if (index !== -1) {
-  //     this.allClaims[index] = { ...this.allClaims[index], ...updatedClaim };
-  //     return of(this.allClaims[index]);
-  //   }
-  //   return of(null); // Return null when the claim is not found
-  // }
 
-  updateClaimStatus( updatedClaim: Claim): Observable<any> {
-    
-    return this.http.put(`${this.apiUrl}/claim`, updatedClaim, this.options);
+  getClaimById(claimId: number): Observable<Claim> {
+    return this.http.get<Claim>(`${this.apiUrl}/Claim/${claimId}`);
   }
-}
+
+  addClaim(claim: Claim): Observable<Claim> {
+    return this.http.post<Claim>(`${this.apiUrl}/Claim`, claim);
+  }
+
+  updateClaim(updatedClaim: Claim): Observable<Claim> {
+    return this.http.put<Claim>(`${this.apiUrl}/Claim/put`, updatedClaim);
+  }
+
+  deleteClaim(claimId: number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/Claim/${claimId}`);
+  }
+ }
