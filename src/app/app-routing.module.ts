@@ -19,6 +19,8 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { ClaimComponent } from './claim/claim.component';
 import { ClaimListComponent } from './claim-list/claim-list.component';
 import { ClaimResolveComponent } from './claim-resolve/claim-resolve.component';
+import { AgentComponent } from './agent/agent.component';
+import { ViewPaymentsComponent } from './view-payments/view-payments.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -39,6 +41,8 @@ const routes: Routes = [
   {path:'claim',component:ClaimComponent},
   {path:'claim-list',component:ClaimListComponent},
   {path:'claim-resolve',component:ClaimResolveComponent},
+  {path:'agent',component:AgentComponent},
+  {path:'view-payments',component:ViewPaymentsComponent},
 
   
   {

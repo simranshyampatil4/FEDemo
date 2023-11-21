@@ -24,6 +24,8 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { ClaimComponent } from './claim/claim.component';
 import { ClaimListComponent } from './claim-list/claim-list.component';
 import { ClaimResolveComponent } from './claim-resolve/claim-resolve.component';
+import { AgentComponent } from './agent/agent.component';
+import { ViewPaymentsComponent } from './view-payments/view-payments.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { ClaimResolveComponent } from './claim-resolve/claim-resolve.component';
     CustomerListComponent,
     ClaimComponent,
     ClaimListComponent,
-    ClaimResolveComponent
+    ClaimResolveComponent,
+    AgentComponent,
+    ViewPaymentsComponent
   ],
   imports: [
     BrowserModule,

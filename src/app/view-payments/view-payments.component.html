@@ -1,0 +1,31 @@
+<!-- agent-list.component.html -->
+<div class="payment-list-container">
+    <h2>Payments</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Payment ID</th>
+          <th>Payment Type</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Tax</th>
+          <th>TotalPayment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let payment of payments">
+          <td>{{ payment.paymentId }}</td>
+          <td>{{ payment.paymentType }}</td>
+          <td>{{ payment.amount }}</td>
+          <td>{{payment.date}}</td>
+          <td>{{ payment.tax }}</td>
+          <td>{{ payment.totalPayment }}</td>
+          <!-- <td>
+            <button (click)="editAgent(agent.AgentId)">Edit</button>
+            <button (click)="deleteAgent(agent.AgentId)">Delete</button>
+          </td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

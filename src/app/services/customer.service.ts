@@ -30,4 +30,12 @@ export class CustomerService {
   deleteCustomer(customerId: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/agent/${customerId}`);
   }
+  getCustomersByAgentId(agentId: number): Observable<Customer[]> {
+    return this.http.get<Customer[]>(`${this.apiUrl}/Customer/getByAgentId/${agentId}`);
+  }
+  // addUser(data:any){    return this.http.post(this.apiUrl+"/User/Register",data)}
+
+  // findUser(username:string){
+  //   return this.http.get(this.apiUrl+"/User/FindUser/"+username)
+  // }
 }

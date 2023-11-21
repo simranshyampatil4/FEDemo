@@ -32,4 +32,9 @@ export class AgentService {
   deleteAgent(agentId: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/agent/${agentId}`);
   }
+  // addUser(data:any){    return this.http.post(this.apiUrl+"/User/Register",data)}
+  
+  // findUser(username:string){
+  //   return this.http.get(this.apiUrl+"/User/FindUser/"+username)
+  // }
 }

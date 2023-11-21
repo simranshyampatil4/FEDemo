@@ -51,6 +51,9 @@ export class LoginComponent {
           }else if(this.user.roleName == 'Employee') {
             this.router.navigateByUrl('/employee');
           }
+          else if(this.user.roleName == 'Agent') {
+            this.router.navigateByUrl('/agent');
+          }
            else {
             this.router.navigateByUrl('/admin');
           }
