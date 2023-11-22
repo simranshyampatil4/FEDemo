@@ -32,6 +32,8 @@ import { InsurancePolicyListComponent } from './insurance-policy-list/insurance-
 import { AdminComponent } from './admin/admin.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { AddInsurancePlanComponent } from './add-insurance-plan/add-insurance-plan.component';
+import { InsurancePlanListComponent } from './insurance-plan-list/insurance-plan-list.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
     InsurancePolicyListComponent,
     AdminComponent,
     AddEmployeeComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    AddInsurancePlanComponent,
+    InsurancePlanListComponent
   ],
   imports: [
     BrowserModule,

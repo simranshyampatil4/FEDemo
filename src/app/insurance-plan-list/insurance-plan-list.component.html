@@ -1,0 +1,25 @@
+<!-- agent-list.component.html -->
+<div class="insurance-plan-list-container">
+    <h2>Insurance Plan List</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Plan No</th>
+          <th>Plan Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let plan of plans">
+          <td>{{ plan.planId }}</td>
+          <td>{{ plan.planName }}</td>
+          <td>
+            <button (click)="editInsurancePlan(plan.planId)">Edit</button>
+            <button (click)="deleteInsurancePlan(plan.planId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+

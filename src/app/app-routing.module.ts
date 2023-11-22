@@ -27,6 +27,8 @@ import { InsurancePolicyListComponent } from './insurance-policy-list/insurance-
 import { AdminComponent } from './admin/admin.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { AddInsurancePlanComponent } from './add-insurance-plan/add-insurance-plan.component';
+import { InsurancePlanListComponent } from './insurance-plan-list/insurance-plan-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -55,7 +57,8 @@ const routes: Routes = [
   {path:'admin',component:AdminComponent},
   {path:'add-employee',component:AddEmployeeComponent},
   {path:'employee-list',component:EmployeeListComponent},
-  
+  {path:'add-insurance-plan',component:AddInsurancePlanComponent},
+  {path:'insurance-plan-list',component:InsurancePlanListComponent},
   {
     path:"weather",
     component:WeatherInfoComponent
