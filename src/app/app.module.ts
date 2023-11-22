@@ -35,6 +35,12 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { AddInsurancePlanComponent } from './add-insurance-plan/add-insurance-plan.component';
 import { InsurancePlanListComponent } from './insurance-plan-list/insurance-plan-list.component';
 import { UpdateInsurancePlanComponent } from './update-insurance-plan/update-insurance-plan.component';
+import { AddInsuranceSchemeComponent } from './add-insurance-scheme/add-insurance-scheme.component';
+import { InsuranceSchemeListComponent } from './insurance-scheme-list/insurance-scheme-list.component';
+import { CustomerComponent } from './customer/customer.component';
+import { CustomerNavbarComponent } from './customer-navbar/customer-navbar.component';
+import { AgentNavbarComponent } from './agent-navbar/agent-navbar.component';
+import { AgentLoginComponent } from './agent-login/agent-login.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +72,14 @@ import { UpdateInsurancePlanComponent } from './update-insurance-plan/update-ins
     EmployeeListComponent,
     AddInsurancePlanComponent,
     InsurancePlanListComponent,
-    UpdateInsurancePlanComponent
+    UpdateInsurancePlanComponent,
+    AddInsuranceSchemeComponent,
+    InsuranceSchemeListComponent,
+    CustomerComponent,
+    CustomerNavbarComponent,
+    AgentNavbarComponent,
+    AgentLoginComponent
+    
   ],
   imports: [
     BrowserModule,

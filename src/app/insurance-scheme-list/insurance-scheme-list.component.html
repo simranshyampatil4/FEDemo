@@ -1,0 +1,28 @@
+<!-- agent-list.component.html -->
+<div class="insurance-scheme-list-container">
+    <h2>Insurance Scheme List</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Scheme Id</th>
+          <th>Scheme Name</th>
+          <th>Detail Id</th>
+          <th>Plan Id</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let scheme of schemes">
+          <td>{{ scheme.schemeId }}</td>
+          <td>{{ scheme.schemeName }}</td>
+          <td>{{ scheme.detailId }}</td>
+          <td>{{ scheme.planId }}</td>
+          <td>
+            <button (click)="editInsuranceScheme(scheme.SchemeId)">Edit</button>
+            <button (click)="deleteInsuranceScheme(scheme.SchemeId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

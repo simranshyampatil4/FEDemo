@@ -1,0 +1,17 @@
+<!-- src/app/add-agent/add-agent.component.html -->
+
+<div class="add-insurance-scheme-container">
+    <h2>Add Insurance Scheme</h2>
+    <form [formGroup]="insuranceSchemeForm" (ngSubmit)="addInsuranceScheme()">
+        <label for="schemeName">Scheme Name:</label>
+        <input id="schemeName"  formControlName="schemeName" required>
+  
+        <label for="detailId">Detail Id:</label>
+        <input id="detailId" formControlName="detailId"  required>
+
+        <label for="planId">Plan Id:</label>
+        <input id="planId" formControlName="planId"  required>
+  
+        <button type="submit">Add Insurance Scheme</button>
+    </form>
+  </div>
