@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { TemporaryDataService } from '../services/temporary-data.service';
 
 @Component({
   selector: 'app-claim',
@@ -8,7 +9,10 @@ import { Router } from '@angular/router';
   styleUrl: './claim.component.css'
 })
 export class ClaimComponent {
-  constructor(private router: Router) { }
+  userRole:string=''
+  constructor(private router: Router,private temporaryData:TemporaryDataService) 
+  {this.userRole=temporaryData.getRole()
+    console.log(this.userRole) }
 
   ngOnInit(): void {
   }

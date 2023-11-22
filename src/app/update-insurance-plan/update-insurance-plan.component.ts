@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { InsuranceplanService } from '../services/insuranceplan.service';
+import { TemporaryDataService } from '../services/temporary-data.service';
 
 @Component({
   selector: 'app-update-insurance-plan',
@@ -12,12 +13,13 @@ import { InsuranceplanService } from '../services/insuranceplan.service';
 export class UpdateInsurancePlanComponent implements OnInit {
   insurancePlanForm!: FormGroup;
   planId: number = 0;
-
+  userRole:string=''
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
-    private insurancePlanService: InsuranceplanService
-  ) {}
+    private insurancePlanService: InsuranceplanService,private temporaryData:TemporaryDataService
+  ) {this.userRole=temporaryData.getRole()
+    console.log(this.userRole)}
 
   ngOnInit(): void {
     this.initForm();

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { EmployeeService } from '../services/employee.service';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { TemporaryDataService } from '../services/temporary-data.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -11,8 +12,10 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class EmployeeListComponent {
   employees: any;
-
-  constructor(private employeeService: EmployeeService, private router: Router) {}
+  userRole:string=''
+  constructor(private employeeService: EmployeeService, private router: Router,private temporaryData:TemporaryDataService) 
+  {this.userRole=temporaryData.getRole()
+    console.log(this.userRole)}
 
   ngOnInit(): void {
     this.fetchEmployees();

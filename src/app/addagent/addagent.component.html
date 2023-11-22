@@ -1,5 +1,10 @@
 <!-- src/app/add-agent/add-agent.component.html -->
-
+<div *ngIf="userRole=='Admin'">
+  <app-admin-navbar></app-admin-navbar>
+</div>
+<div *ngIf="userRole=='Agent'">
+  <app-agent-navbar></app-agent-navbar>
+</div>
 <div class="add-agent-container">
   <h2>Add Agent</h2>
   <form [formGroup]="agentForm" (ngSubmit)="addAgent()">
@@ -23,10 +28,6 @@
 
     <label for="commissionEarned">Commission Earned:</label>
     <input id="commissionEarned" formControlName="commissionEarned" type="number" required>
-
-    <!-- Uncomment the following lines if IsActive is needed -->
-    <!-- <label for="isActive">Is Active:</label>
-    <input id="isActive" formControlName="isActive" type="checkbox"> -->
 
     <button type="submit">Add Agent</button>
   </form>

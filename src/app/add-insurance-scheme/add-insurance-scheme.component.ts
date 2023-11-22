@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { InsuranceSchemeService } from '../services/insurance-scheme.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { lastValueFrom } from 'rxjs';
+import { TemporaryDataService } from '../services/temporary-data.service';
 
 @Component({
   selector: 'app-add-insurance-scheme',
@@ -11,11 +12,12 @@ import { lastValueFrom } from 'rxjs';
 })
 export class AddInsuranceSchemeComponent {
   insuranceSchemeForm!: FormGroup; // Note the non-null assertion operator here
-
+  userRole:string=''
   constructor(
     private fb: FormBuilder,
-    private insuranceSchemeService: InsuranceSchemeService
-  ) {}
+    private insuranceSchemeService: InsuranceSchemeService,private temporaryData:TemporaryDataService
+  ) {this.userRole=temporaryData.getRole()
+    console.log(this.userRole)}
   ngOnInit(): void {
     this.insuranceSchemeForm = this.fb.group({
       schemeName: ['', Validators.required],

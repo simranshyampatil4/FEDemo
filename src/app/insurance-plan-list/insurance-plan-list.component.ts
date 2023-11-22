@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { InsuranceplanService } from '../services/insuranceplan.service';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { TemporaryDataService } from '../services/temporary-data.service';
 
 @Component({
   selector: 'app-insurance-plan-list',
@@ -11,8 +12,10 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class InsurancePlanListComponent {
   plans: any;
-
-  constructor(private insurancePlanService: InsuranceplanService, private router: Router) {}
+  userRole:string=''
+  constructor(private insurancePlanService: InsuranceplanService, private router: Router,private temporaryData:TemporaryDataService) 
+  {this.userRole=temporaryData.getRole()
+    console.log(this.userRole)}
 
   ngOnInit(): void {
     this.fetchInsurancePlan();

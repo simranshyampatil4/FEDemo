@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AgentService } from '../services/agent.service';
 import { Agent } from '../models/agent';
 import { lastValueFrom } from 'rxjs';
+import { TemporaryDataService } from '../services/temporary-data.service';
 
 @Component({
   selector: 'app-addagent',
@@ -13,8 +14,10 @@ import { lastValueFrom } from 'rxjs';
 })
 export class AddagentComponent implements OnInit {
   agentForm!: FormGroup;
-
-  constructor(private fb: FormBuilder, private agentService: AgentService) {}
+  userRole:string=''
+  constructor(private fb: FormBuilder, private agentService: AgentService,private temporaryData:TemporaryDataService) 
+  {this.userRole=temporaryData.getRole()
+    console.log(this.userRole)}
 
   ngOnInit(): void {
     this.agentForm = this.fb.group({

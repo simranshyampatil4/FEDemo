@@ -1,3 +1,9 @@
+<div *ngIf="userRole=='Admin'">
+    <app-admin-navbar></app-admin-navbar>
+  </div>
+  <div *ngIf="userRole=='Agent'">
+    <app-agent-navbar></app-agent-navbar>
+  </div>
   <div class="update-insurance-plan-container">
     <h2>Update Insurance Plan</h2>
     <form [formGroup]="insurancePlanForm" (ngSubmit)="updateInsurancePlan()">

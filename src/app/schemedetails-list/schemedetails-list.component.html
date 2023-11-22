@@ -1,4 +1,10 @@
 <!-- agent-list.component.html -->
+<div *ngIf="userRole=='Admin'">
+  <app-admin-navbar></app-admin-navbar>
+</div>
+<div *ngIf="userRole=='Agent'">
+  <app-agent-navbar></app-agent-navbar>
+</div>
 <div class="schemedetails-list-container">
     <h2>Scheme Details List</h2>
     <table class="table table-bordered">

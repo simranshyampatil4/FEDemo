@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmployeeService } from '../services/employee.service';
 import { lastValueFrom } from 'rxjs';
+import { TemporaryDataService } from '../services/temporary-data.service';
 
 @Component({
   selector: 'app-add-employee',
@@ -11,11 +12,12 @@ import { lastValueFrom } from 'rxjs';
 })
 export class AddEmployeeComponent {
   employeeForm!: FormGroup; // Note the non-null assertion operator here
-
+  userRole:string=''
   constructor(
     private fb: FormBuilder,
-    private employeeService: EmployeeService
-  ) {}
+    private employeeService: EmployeeService,private temporaryData:TemporaryDataService
+  ) {this.userRole=temporaryData.getRole()
+    console.log(this.userRole)}
   ngOnInit(): void {
     this.employeeForm = this.fb.group({
       firstName: ['', Validators.required],

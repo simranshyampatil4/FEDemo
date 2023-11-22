@@ -5,6 +5,7 @@ import { Agent } from '../models/agent';
 import { AgentService } from '../services/agent.service';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
+import { TemporaryDataService } from '../services/temporary-data.service';
 
 @Component({
   selector: 'app-agent-list',
@@ -13,8 +14,10 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class AgentListComponent implements OnInit {
   agents: any;
-
-  constructor(private agentService: AgentService, private router: Router) {}
+  userRole:string=''
+  constructor(private agentService: AgentService, private router: Router,private temporaryData:TemporaryDataService) 
+  {this.userRole=temporaryData.getRole()
+    console.log(this.userRole)}
 
   ngOnInit(): void {
     this.fetchAgents();

@@ -1,5 +1,10 @@
 <!-- src/app/add-agent/add-agent.component.html -->
-
+<div *ngIf="userRole=='Admin'">
+    <app-admin-navbar></app-admin-navbar>
+  </div>
+  <div *ngIf="userRole=='Agent'">
+    <app-agent-navbar></app-agent-navbar>
+  </div>
 <div class="add-insurance-scheme-container">
     <h2>Add Insurance Scheme</h2>
     <form [formGroup]="insuranceSchemeForm" (ngSubmit)="addInsuranceScheme()">
