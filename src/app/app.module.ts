@@ -34,6 +34,7 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { AddInsurancePlanComponent } from './add-insurance-plan/add-insurance-plan.component';
 import { InsurancePlanListComponent } from './insurance-plan-list/insurance-plan-list.component';
+import { UpdateInsurancePlanComponent } from './update-insurance-plan/update-insurance-plan.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { InsurancePlanListComponent } from './insurance-plan-list/insurance-plan
     AddEmployeeComponent,
     EmployeeListComponent,
     AddInsurancePlanComponent,
-    InsurancePlanListComponent
+    InsurancePlanListComponent,
+    UpdateInsurancePlanComponent
   ],
   imports: [
     BrowserModule,

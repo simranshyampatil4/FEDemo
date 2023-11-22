@@ -1,0 +1,14 @@
+<!-- src/app/add-agent/add-agent.component.html -->
+
+<div class="add-insurance-plan-container">
+    <h2>Add Insurance Plan</h2>
+    <form [formGroup]="insurancePlanForm" (ngSubmit)="addInsurancePlan()">
+        <label for="planName">Plan Name:</label>
+        <input type="hidden" formControlName="planId" [(ngModel)]="planId" required>
+        <input id="planName"  formControlName="planName" required>
+  
+        <button type="submit">Add Insurance Plan</button>
+    </form>
+  </div>
+
+

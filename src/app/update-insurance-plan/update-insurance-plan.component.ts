@@ -1,30 +1,33 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { lastValueFrom } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InsuranceplanService } from '../services/insuranceplan.service';
-import { lastValueFrom } from 'rxjs';
 
 @Component({
-  selector: 'app-add-insurance-plan',
-  templateUrl: './add-insurance-plan.component.html',
-  styleUrl: './add-insurance-plan.component.css'
+  selector: 'app-update-insurance-plan',
+  templateUrl: './update-insurance-plan.component.html',
+  styleUrl: './update-insurance-plan.component.css'
 })
-export class AddInsurancePlanComponent {
+export class UpdateInsurancePlanComponent {
   insurancePlanForm!: FormGroup; // Note the non-null assertion operator here
-
+  planId:number=0
   constructor(
     private fb: FormBuilder,
     private insurancePlanService: InsuranceplanService
-  ) {}
+  ) {
+    this.planId=insurancePlanService.getId()
+  }
   ngOnInit(): void {
     this.insurancePlanForm = this.fb.group({
+      planId:['', Validators.required],
       planName: ['', Validators.required],
     });
   }
 
   async addInsurancePlan(): Promise<void> {
     try {
-      const addedInsurancePlan = await lastValueFrom(this.insurancePlanService.addInsurancePlan(this.insurancePlanForm.value));
+      const addedInsurancePlan = await lastValueFrom(this.insurancePlanService.updateInsurancePlan(this.insurancePlanForm.value));
       console.log('Insurance Plan added:', addedInsurancePlan);
 
       // Display an alert to the user
@@ -39,5 +42,5 @@ export class AddInsurancePlanComponent {
       alert('Error adding Insurance Plan. Please try again.');
     }
   }
-  
+
 }

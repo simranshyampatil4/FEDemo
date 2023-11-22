@@ -8,7 +8,7 @@ import { InsurancePlan } from '../models/insurancePlan';
 })
 export class InsuranceplanService {
   private apiUrl = 'https://localhost:7029/api'; // Replace with your API URL
-
+private id:number=0;
   constructor(private http: HttpClient) {}
 
   getAllInsurancePlan(): Observable<InsurancePlan[]> {
@@ -29,5 +29,11 @@ export class InsuranceplanService {
 
   deleteInsurancePlan(planId: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/InsurancePlan/${planId}`);
+  }
+  getId(){
+    return this.id
+  }
+  setId(planId:number){
+    this.id=planId
   }
 }

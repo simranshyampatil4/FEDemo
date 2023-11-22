@@ -33,8 +33,8 @@ export class InsurancePlanListComponent {
   }
 
   editInsurancePlan(planId: number): void {
-    // Navigate to the update agent page with the agent ID
-    this.router.navigate(['/update-insurance-plan', planId]);
+    this.insurancePlanService.setId(planId)
+    this.router.navigateByUrl('/update-insurance-plan')
   }
 
   deleteInsurancePlan(planId: number): void {

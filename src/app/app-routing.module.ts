@@ -29,6 +29,8 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { AddInsurancePlanComponent } from './add-insurance-plan/add-insurance-plan.component';
 import { InsurancePlanListComponent } from './insurance-plan-list/insurance-plan-list.component';
+import { UpdateInsurancePlanComponent } from './update-insurance-plan/update-insurance-plan.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -59,6 +61,7 @@ const routes: Routes = [
   {path:'employee-list',component:EmployeeListComponent},
   {path:'add-insurance-plan',component:AddInsurancePlanComponent},
   {path:'insurance-plan-list',component:InsurancePlanListComponent},
+  {path:'update-insurance-plan',component:UpdateInsurancePlanComponent},
   {
     path:"weather",
     component:WeatherInfoComponent
