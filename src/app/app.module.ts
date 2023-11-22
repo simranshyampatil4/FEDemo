@@ -41,6 +41,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { CustomerNavbarComponent } from './customer-navbar/customer-navbar.component';
 import { AgentNavbarComponent } from './agent-navbar/agent-navbar.component';
 import { AgentLoginComponent } from './agent-login/agent-login.component';
+import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { AgentLoginComponent } from './agent-login/agent-login.component';
     CustomerComponent,
     CustomerNavbarComponent,
     AgentNavbarComponent,
-    AgentLoginComponent
+    AgentLoginComponent,
+    AdminNavbarComponent
     
   ],
   imports: [

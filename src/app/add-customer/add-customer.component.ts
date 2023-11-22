@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomerService } from '../services/customer.service';
 import { Customer } from '../models/customer';
 import { lastValueFrom } from 'rxjs';
+import { TemporaryDataService } from '../services/temporary-data.service';
 
 @Component({
   selector: 'app-add-customer',
@@ -13,11 +14,13 @@ import { lastValueFrom } from 'rxjs';
 })
 export class AddCustomerComponent implements OnInit {
   customerForm!: FormGroup; // Note the non-null assertion operator here
-
+  userRole:string=''
   constructor(
     private fb: FormBuilder,
-    private customerService: CustomerService
-  ) {}
+    private customerService: CustomerService,private temporaryData:TemporaryDataService
+  ) { this.userRole=temporaryData.getRole()
+    console.log(this.userRole)
+    }
 
   ngOnInit(): void {
     this.customerForm = this.fb.group({

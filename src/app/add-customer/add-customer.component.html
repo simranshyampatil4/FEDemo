@@ -1,41 +1,48 @@
 <!-- src/app/add-agent/add-agent.component.html -->
+    <div *ngIf="userRole=='Admin'">
+      <app-admin-navbar></app-admin-navbar>
+    </div>
+    <div *ngIf="userRole=='Agent'">
+      <app-agent-navbar></app-agent-navbar>
+    </div>
+    <div class="add-customer-container">
+      <h2>Add Customer</h2>
+      <form [formGroup]="customerForm" (ngSubmit)="addCustomer()">
+          <label for="firstName">First Name:</label>
+          <input id="firstName"  formControlName="firstName" required>
+    
+          <label for="lastName">Last Name:</label>
+          <input id="lastName" formControlName="lastName" required>
+    
+          <label for="email">Email:</label>
+          <input id="email" formControlName="email" type="email" required>
+    
+          <label for="mobileNo">Mobile Number:</label>
+          <input id="mobileNo" formControlName="mobileNo" required>
+    
+          <label for="state">State:</label>
+          <input id="state" formControlName="state" required>
+    
+          <label for="city">City:</label>
+          <input id="city" formControlName="city" required>
+    
+          <label for="nominee">Nominee Name:</label>
+          <input id="nominee" formControlName="nominee" required>
+    
+          <label for="nomineeRelation">Nominee Relation:</label>
+          <input id="nomineeRelation" formControlName="nomineeRelation" required>
+    
+          <!-- <input id="userId" [(ngModel)]="customerForm.get('userId')!.value" name="userId" type="hidden" required>
+          <input id="agentId" [(ngModel)]="customerForm.get('agentId')!.value" name="agentId" type="hidden" required> -->
+    
+          <label for="userId">UserId:</label>
+          <input id="userId" formControlName="userId"  required>
+    
+          <label for="agentId">agentId:</label>
+          <input id="agentId" formControlName="agentId"  required>
+    
+          <button type="submit">Add Customer</button>
+      </form>
+    </div>
+  
 
-<div class="add-customer-container">
-  <h2>Add Customer</h2>
-  <form [formGroup]="customerForm" (ngSubmit)="addCustomer()">
-      <label for="firstName">First Name:</label>
-      <input id="firstName"  formControlName="firstName" required>
-
-      <label for="lastName">Last Name:</label>
-      <input id="lastName" formControlName="lastName" required>
-
-      <label for="email">Email:</label>
-      <input id="email" formControlName="email" type="email" required>
-
-      <label for="mobileNo">Mobile Number:</label>
-      <input id="mobileNo" formControlName="mobileNo" required>
-
-      <label for="state">State:</label>
-      <input id="state" formControlName="state" required>
-
-      <label for="city">City:</label>
-      <input id="city" formControlName="city" required>
-
-      <label for="nominee">Nominee Name:</label>
-      <input id="nominee" formControlName="nominee" required>
-
-      <label for="nomineeRelation">Nominee Relation:</label>
-      <input id="nomineeRelation" formControlName="nomineeRelation" required>
-
-      <!-- <input id="userId" [(ngModel)]="customerForm.get('userId')!.value" name="userId" type="hidden" required>
-      <input id="agentId" [(ngModel)]="customerForm.get('agentId')!.value" name="agentId" type="hidden" required> -->
-
-      <label for="userId">UserId:</label>
-      <input id="userId" formControlName="userId"  required>
-
-      <label for="agentId">agentId:</label>
-      <input id="agentId" formControlName="agentId"  required>
-
-      <button type="submit">Add Customer</button>
-  </form>
-</div>

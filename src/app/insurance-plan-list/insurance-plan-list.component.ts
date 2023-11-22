@@ -36,6 +36,7 @@ export class InsurancePlanListComponent {
     this.insurancePlanService.setId(planId)
     this.router.navigateByUrl('/update-insurance-plan')
   }
+ 
 
   deleteInsurancePlan(planId: number): void {
     // Implement the logic to delete the agent using the agent service

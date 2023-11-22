@@ -36,6 +36,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { CustomerNavbarComponent } from './customer-navbar/customer-navbar.component';
 import { AgentNavbarComponent } from './agent-navbar/agent-navbar.component';
 import { AgentLoginComponent } from './agent-login/agent-login.component';
+import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 
 
 
@@ -75,6 +76,7 @@ const routes: Routes = [
   {path:'customer-navbar',component:CustomerNavbarComponent},
   {path:'agent-navbar',component:AgentNavbarComponent},
   {path:'agent-login',component:AgentLoginComponent},
+  {path:'admin-navbar',component:AdminNavbarComponent}, 
   {
     path:"weather",
     component:WeatherInfoComponent
