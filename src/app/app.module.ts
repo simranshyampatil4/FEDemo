@@ -30,6 +30,8 @@ import { SchemedetailsListComponent } from './schemedetails-list/schemedetails-l
 import { AddInsurancePolicyComponent } from './add-insurance-policy/add-insurance-policy.component';
 import { InsurancePolicyListComponent } from './insurance-policy-list/insurance-policy-list.component';
 import { AdminComponent } from './admin/admin.component';
+import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { AdminComponent } from './admin/admin.component';
     SchemedetailsListComponent,
     AddInsurancePolicyComponent,
     InsurancePolicyListComponent,
-    AdminComponent
+    AdminComponent,
+    AddEmployeeComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,
