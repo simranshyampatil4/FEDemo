@@ -47,7 +47,7 @@ export class LoginComponent {
           // Check if 'user' is not null or undefined before accessing properties
           //debugger
           if (this.user.roleName == 'Admin') {
-            this.router.navigateByUrl('/weather');
+            this.router.navigateByUrl('/admin');
           }else if(this.user.roleName == 'Employee') {
             this.router.navigateByUrl('/employee');
           }

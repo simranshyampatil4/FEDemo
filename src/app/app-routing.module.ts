@@ -20,7 +20,11 @@ import { ClaimComponent } from './claim/claim.component';
 import { ClaimListComponent } from './claim-list/claim-list.component';
 import { ClaimResolveComponent } from './claim-resolve/claim-resolve.component';
 import { AgentComponent } from './agent/agent.component';
+import { AddInsurancePolicyComponent } from './add-insurance-policy/add-insurance-policy.component';
 import { ViewPaymentsComponent } from './view-payments/view-payments.component';
+import { SchemedetailsListComponent } from './schemedetails-list/schemedetails-list.component';
+import { InsurancePolicyListComponent } from './insurance-policy-list/insurance-policy-list.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -43,7 +47,10 @@ const routes: Routes = [
   {path:'claim-resolve',component:ClaimResolveComponent},
   {path:'agent',component:AgentComponent},
   {path:'view-payments',component:ViewPaymentsComponent},
-
+  {path:'schemedetails-list',component:SchemedetailsListComponent},
+  {path:'add-insurance-policy',component:AddInsurancePolicyComponent},
+  {path:'insurance-policy-list',component:InsurancePolicyListComponent},
+  {path:'admin',component:AdminComponent},
   
   {
     path:"weather",

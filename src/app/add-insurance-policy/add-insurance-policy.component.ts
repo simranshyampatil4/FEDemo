@@ -6,8 +6,6 @@ import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-add-insurance-policy',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './add-insurance-policy.component.html',
   styleUrl: './add-insurance-policy.component.css'
 })

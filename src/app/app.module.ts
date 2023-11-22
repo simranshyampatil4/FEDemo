@@ -26,6 +26,10 @@ import { ClaimListComponent } from './claim-list/claim-list.component';
 import { ClaimResolveComponent } from './claim-resolve/claim-resolve.component';
 import { AgentComponent } from './agent/agent.component';
 import { ViewPaymentsComponent } from './view-payments/view-payments.component';
+import { SchemedetailsListComponent } from './schemedetails-list/schemedetails-list.component';
+import { AddInsurancePolicyComponent } from './add-insurance-policy/add-insurance-policy.component';
+import { InsurancePolicyListComponent } from './insurance-policy-list/insurance-policy-list.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,11 @@ import { ViewPaymentsComponent } from './view-payments/view-payments.component';
     ClaimListComponent,
     ClaimResolveComponent,
     AgentComponent,
-    ViewPaymentsComponent
+    ViewPaymentsComponent,
+    SchemedetailsListComponent,
+    AddInsurancePolicyComponent,
+    InsurancePolicyListComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
