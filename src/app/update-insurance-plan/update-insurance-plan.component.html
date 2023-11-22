@@ -1,14 +1,17 @@
-<!-- src/app/add-agent/add-agent.component.html -->
-
-<div class="add-insurance-plan-container">
-    <h2>Add Insurance Plan</h2>
-    <form [formGroup]="insurancePlanForm" (ngSubmit)="addInsurancePlan()">
+  <div class="update-insurance-plan-container">
+    <h2>Update Insurance Plan</h2>
+    <form [formGroup]="insurancePlanForm" (ngSubmit)="updateInsurancePlan()">
+      <!-- <div>
+        <label for="planId">Plan ID:</label>
+        <input type="text" id="planId" name="planId" formControlName="planId" > 
+      </div> -->
+      <div>
         <label for="planName">Plan Name:</label>
-        <input type="hidden" formControlName="planId" [(ngModel)]="planId" required>
-        <input id="planName"  formControlName="planName" required>
+        <input type="text" id="planName" name="planName" formControlName="planName" required>
+      </div>
+      <!-- Add other form fields as needed -->
   
-        <button type="submit">Add Insurance Plan</button>
+      <button type="submit">Update Plan</button>
     </form>
   </div>
-
 
