@@ -34,10 +34,16 @@ export class ClaimListComponent {
     }
     );
   }
-
-  editClaim(): void {
-    // Navigate to the update agent page with the agent ID
-    this.router.navigate(['/claim-resolve']);
+ 
+//   editClaim(claimId: number): void {
+//     // Navigate to the update claim page with the claim ID
+//     this.router.navigate(['/update-claim', claimId]);
+// }
+  editClaim(claimId:number): void {
+    debugger
+    this.claimService.setId(claimId)
+    this.router.navigate(['/update-claim',claimId]);
+    console.log(claimId);
   }
 
   deleteClaim(claimId: number): void {

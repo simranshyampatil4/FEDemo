@@ -30,8 +30,8 @@
           <td>{{ claim.status}}</td>
           <td>{{ claim.policyNo}}</td>
           <td>
-            <button (click)="editClaim()">Edit</button>
-            <button (click)="deleteClaim(claim.ClaimId)">Delete</button>
+            <button (click)="editClaim(claim.claimId)">Edit</button>
+            <button (click)="deleteClaim(claim.claimId)">Delete</button>
           </td>
         </tr>
       </tbody>

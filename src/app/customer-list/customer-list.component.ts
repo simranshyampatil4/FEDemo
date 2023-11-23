@@ -39,6 +39,10 @@ export class CustomerListComponent {
     // Navigate to the update agent page with the agent ID
     this.router.navigate(['/update-customer', customerId]);
   }
+  // editCustomer(customerId: number): void {
+  //   // Navigate to the update agent page with the agent ID
+  //   this.router.navigate(['/update-customer', customerId]);
+  // }
 
   deleteCustomer(customerId: number): void {
     // Implement the logic to delete the agent using the agent service

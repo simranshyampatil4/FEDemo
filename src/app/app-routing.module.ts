@@ -127,6 +127,9 @@ import { CustomerNavbarComponent } from './customer-navbar/customer-navbar.compo
 import { AgentNavbarComponent } from './agent-navbar/agent-navbar.component';
 import { AgentLoginComponent } from './agent-login/agent-login.component';
 import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { UpdateClaimComponent } from './update-claim/update-claim.component';
+import { UpdateCustomerComponent } from './update-customer/update-customer.component';
 
 
 
@@ -167,6 +170,9 @@ const routes: Routes = [
   {path:'agent-navbar',component:AgentNavbarComponent},
   {path:'agent-login',component:AgentLoginComponent},
   {path:'admin-navbar',component:AdminNavbarComponent}, 
+  {path:'admin-dashboard',component:AdminDashboardComponent},
+  {path:'update-claim/:id',component:UpdateClaimComponent},
+  {path:'update-customer',component:UpdateCustomerComponent},
   {
     path:"weather",
     component:WeatherInfoComponent

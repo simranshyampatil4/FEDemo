@@ -42,6 +42,9 @@ import { CustomerNavbarComponent } from './customer-navbar/customer-navbar.compo
 import { AgentNavbarComponent } from './agent-navbar/agent-navbar.component';
 import { AgentLoginComponent } from './agent-login/agent-login.component';
 import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { UpdateClaimComponent } from './update-claim/update-claim.component';
+import { UpdateCustomerComponent } from './update-customer/update-customer.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +83,10 @@ import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
     CustomerNavbarComponent,
     AgentNavbarComponent,
     AgentLoginComponent,
-    AdminNavbarComponent
+    AdminNavbarComponent,
+    AdminDashboardComponent,
+    UpdateClaimComponent,
+    UpdateCustomerComponent
     
   ],
   imports: [

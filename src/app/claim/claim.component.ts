@@ -20,4 +20,12 @@ export class ClaimComponent {
   redirectTo(route: string): void {
     this.router.navigate([route]);
   }
+  viewClaim(){
+    console.log("hih")
+    //debugger
+    this.temporaryData.setRole('Admin')
+    this.router.navigateByUrl("/claim-list")
+    // console.log(this.temporarydata.getRole)
+    
+  }
 }

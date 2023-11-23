@@ -12,7 +12,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" routerLink="#">Dashboard</a>
+                            <a class="nav-link" routerLink="/admin-dashboard">Dashboard</a>
                         </li>
                         <li ngbDropdown class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdownAccount" role="button" ngbDropdownToggle aria-haspopup="true" aria-expanded="false">
@@ -21,8 +21,6 @@
                             <div ngbDropdownMenu aria-labelledby="navbarDropdownAccount" class="dropdown-menu">
                                 <a ngbDropdownItem routerLink="/add-agent" class="dropdown-item">Add Agent</a>
                                 <a ngbDropdownItem routerLink="/agent-list" class="dropdown-item">View Agent</a>
-                                <a ngbDropdownItem routerLink="#" class="dropdown-item">View Commission</a>
-                                <a ngbDropdownItem routerLink="#" class="dropdown-item">View Commission Withdrawal</a>
                             </div>
                         </li>
                         <li ngbDropdown class="nav-item dropdown">
@@ -37,15 +35,7 @@
                                 <li><a ngbDropdownItem routerLink="/view-payments" class="dropdown-item">View Policy Payment</a></li>
                                 <li><a ngbDropdownItem routerLink="/claim" class="dropdown-item">View Policy Claim</a></li>
                             </ul>
-                        </li>
-                        <li ngbDropdown class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdownInsurance" role="button" ngbDropdownToggle aria-haspopup="true" aria-expanded="false">
-                                Queries
-                            </a>
-                            <ul ngbDropdownMenu aria-labelledby="navbarDropdownInsurance" class="dropdown-menu">
-                                <li><a ngbDropdownItem routerLink = "#" class="dropdown-item">View Feedback</a></li>
-                            </ul>
-                        </li>               
+                        </li>           
                         <li ngbDropdown class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdownInsurance" role="button" ngbDropdownToggle aria-haspopup="true" aria-expanded="false">
                                 Insurance Type
