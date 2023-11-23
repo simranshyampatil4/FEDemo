@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmployeeService } from '../services/employee.service';
 import { lastValueFrom } from 'rxjs';
 import { TemporaryDataService } from '../services/temporary-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-employee',
@@ -15,6 +16,7 @@ export class AddEmployeeComponent {
   userRole:string=''
   constructor(
     private fb: FormBuilder,
+    private router:Router,
     private employeeService: EmployeeService,private temporaryData:TemporaryDataService
   ) {this.userRole=temporaryData.getRole()
     console.log(this.userRole)}
@@ -38,7 +40,7 @@ export class AddEmployeeComponent {
 
       // Display an alert to the user
       alert('Employee added successfully!');
-
+        this.router.navigateByUrl("/admin-dashboard")
       // Optionally, you can reset the form or perform any other actions here
       this.employeeForm.reset();
     } catch (error) {

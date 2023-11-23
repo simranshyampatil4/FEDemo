@@ -7,27 +7,43 @@
 <div class="add-insurance-policy-container">
     <h2>Add Insurance Policy</h2>
 <form [formGroup]="insurancePolicyForm" (ngSubmit)="addInsurancePolicy()">
-    <div>
+  <div class="form-group">
     <label for="issueDate">Issue Date:</label>
+    <div class="input-group">
       <input
-        type="text"
         class="form-control"
-        id="issueDate"
-        formControlName="issueDate"
-        bsDatepicker
+        placeholder="yyyy-mm-dd"
+        name="dpIssueDate"
+        [(ngModel)]="modelIssueDate"
+        ngbDatepicker
+        #dIssueDate="ngbDatepicker"
       />
+      <button
+        class="btn btn-outline-secondary bi bi-calendar3"
+        (click)="dIssueDate.toggle()"
+        type="button"
+      ></button>
     </div>
+  </div>
 
-    <div class="form-group">
-      <label for="maturityDate">Maturity Date:</label>
+  <div class="form-group">
+    <label for="maturityDate">Maturity Date:</label>
+    <div class="input-group">
       <input
-        type="text"
         class="form-control"
-        id="maturityDate"
-        formControlName="maturityDate"
-        bsDatepicker
+        placeholder="yyyy-mm-dd"
+        name="dpMaturityDate"
+        [(ngModel)]="modelMaturityDate"
+        ngbDatepicker
+        #dMaturityDate="ngbDatepicker"
       />
+      <button
+        class="btn btn-outline-secondary bi bi-calendar3"
+        (click)="dMaturityDate.toggle()"
+        type="button"
+      ></button>
     </div>
+  </div>
   
     <div>
       <label for="premiumType">Premium Type:</label>
@@ -68,3 +84,4 @@
   </form>
   
   </div>
+

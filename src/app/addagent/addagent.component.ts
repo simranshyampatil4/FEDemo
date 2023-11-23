@@ -6,6 +6,7 @@ import { AgentService } from '../services/agent.service';
 import { Agent } from '../models/agent';
 import { lastValueFrom } from 'rxjs';
 import { TemporaryDataService } from '../services/temporary-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addagent',
@@ -15,7 +16,10 @@ import { TemporaryDataService } from '../services/temporary-data.service';
 export class AddagentComponent implements OnInit {
   agentForm!: FormGroup;
   userRole:string=''
-  constructor(private fb: FormBuilder, private agentService: AgentService,private temporaryData:TemporaryDataService) 
+  constructor(private fb: FormBuilder,
+    private router:Router, 
+    private agentService: AgentService,
+    private temporaryData:TemporaryDataService) 
   {this.userRole=temporaryData.getRole()
     console.log(this.userRole)}
 
@@ -41,6 +45,10 @@ export class AddagentComponent implements OnInit {
 
       // Display an alert to the user
       alert('Agent added successfully!');
+      if(this.userRole=='Admin')
+        this.router.navigateByUrl("/admin-dashboard")
+      if(this.userRole=='Employee')
+        this.router.navigateByUrl("/employee")
 
       // Optionally, you can reset the form or perform any other actions here
       this.agentForm.reset();

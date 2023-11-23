@@ -4,6 +4,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InsurancePolicyService } from '../services/insurance-policy.service';
 import { lastValueFrom } from 'rxjs';
 import { TemporaryDataService } from '../services/temporary-data.service';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-add-insurance-policy',
@@ -13,8 +16,11 @@ import { TemporaryDataService } from '../services/temporary-data.service';
 export class AddInsurancePolicyComponent {
   insurancePolicyForm!: FormGroup; // Note the non-null assertion operator here
   userRole:string=''
+  modelIssueDate: NgbDateStruct | undefined;
+  modelMaturityDate: NgbDateStruct | undefined;
   constructor(
     private fb: FormBuilder,
+    private router:Router,
     private insurancePolicyService: InsurancePolicyService,private temporaryData:TemporaryDataService
   ) {this.userRole=temporaryData.getRole()
     console.log(this.userRole)}
@@ -41,6 +47,10 @@ export class AddInsurancePolicyComponent {
 
       // Display an alert to the user
       alert(' InsurancePolicy added successfully!');
+      if(this.userRole=='Admin')
+        this.router.navigateByUrl("/admin-dashboard")
+      if(this.userRole=='Employee')
+        this.router.navigateByUrl("/employee")
 
       // Optionally, you can reset the form or perform any other actions here
       this.insurancePolicyForm.reset();

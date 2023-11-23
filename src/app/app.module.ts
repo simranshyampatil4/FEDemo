@@ -45,6 +45,9 @@ import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UpdateClaimComponent } from './update-claim/update-claim.component';
 import { UpdateCustomerComponent } from './update-customer/update-customer.component';
+import { AddSchemeDetailsComponent } from './add-scheme-details/add-scheme-details.component';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -86,7 +89,8 @@ import { UpdateCustomerComponent } from './update-customer/update-customer.compo
     AdminNavbarComponent,
     AdminDashboardComponent,
     UpdateClaimComponent,
-    UpdateCustomerComponent
+    UpdateCustomerComponent,
+    AddSchemeDetailsComponent
     
   ],
   imports: [

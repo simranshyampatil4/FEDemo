@@ -4,6 +4,7 @@ import { InsuranceSchemeService } from '../services/insurance-scheme.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { lastValueFrom } from 'rxjs';
 import { TemporaryDataService } from '../services/temporary-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-insurance-scheme',
@@ -15,6 +16,7 @@ export class AddInsuranceSchemeComponent {
   userRole:string=''
   constructor(
     private fb: FormBuilder,
+    private router:Router,
     private insuranceSchemeService: InsuranceSchemeService,private temporaryData:TemporaryDataService
   ) {this.userRole=temporaryData.getRole()
     console.log(this.userRole)}
@@ -33,6 +35,10 @@ export class AddInsuranceSchemeComponent {
 
       // Display an alert to the user
       alert('Insurance Scheme added successfully!');
+      if(this.userRole=='Admin')
+        this.router.navigateByUrl("/admin-dashboard")
+      if(this.userRole=='Employee')
+        this.router.navigateByUrl("/employee")
 
       // Optionally, you can reset the form or perform any other actions here
       this.insuranceSchemeForm.reset();
