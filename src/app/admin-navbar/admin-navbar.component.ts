@@ -18,4 +18,8 @@ export class AdminNavbarComponent {
     // console.log(this.temporarydata.getRole)
     
   }
+  deleteToken(){
+    localStorage.clear()
+    this.router.navigateByUrl("/login")
+  }
 }

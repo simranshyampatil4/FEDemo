@@ -25,7 +25,9 @@ export class AddEmployeeComponent {
       mobileNo: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       salary: [0, Validators.required],
-      userId: [0, Validators.required],
+      // userId: [0, Validators.required],
+      userName:['', Validators.required],
+      password:['', Validators.required],
     });
   }
 

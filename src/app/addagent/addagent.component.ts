@@ -26,7 +26,9 @@ export class AddagentComponent implements OnInit {
       qualification: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       mobileNo: ['', Validators.required],
-      userId: [0, Validators.required],
+      // userId: [0],
+      userName:['', Validators.required],
+      password:['', Validators.required],
       commissionEarned: [0, Validators.required],
       // isActive: [true], // Uncomment this line if needed
     });

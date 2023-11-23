@@ -17,6 +17,11 @@
     padding: 8px;
     margin-bottom: 10px;
   }
+  select {
+    width: 100%; /* Set to the desired width */
+    padding: 8px; /* Adjust padding as needed */
+    margin-bottom: 10px;
+  }
   
   button {
     padding: 10px;
