@@ -10,31 +10,32 @@ import { Agent } from '../models/agent';
 })
 export class AgentService {
   private apiUrl = 'https://localhost:7029/api'; // Replace with your API URL
-
+  private id:number=0;
   constructor(private http: HttpClient) {}
 
   getAllAgents(): Observable<Agent[]> {
-    return this.http.get<Agent[]>(`${this.apiUrl}/agent/get`);
+    return this.http.get<Agent[]>(`${this.apiUrl}/Agent/get`);
   }
 
   getAgentById(agentId: number): Observable<Agent> {
-    return this.http.get<Agent>(`${this.apiUrl}/agent/${agentId}`);
+    return this.http.get<Agent>(`${this.apiUrl}/Agent?Id=${agentId}`);
   }
 
   addAgent(agent: Agent): Observable<Agent> {
-    return this.http.post<Agent>(`${this.apiUrl}/agent`, agent);
+    return this.http.post<Agent>(`${this.apiUrl}/Agent`, agent);
   }
 
   updateAgent(updatedAgent: Agent): Observable<Agent> {
-    return this.http.put<Agent>(`${this.apiUrl}/agent/put`, updatedAgent);
+    return this.http.put<Agent>(`${this.apiUrl}/Agent/`, updatedAgent);
   }
 
   deleteAgent(agentId: number): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/agent/${agentId}`);
+    return this.http.delete<any>(`${this.apiUrl}/Agent/${agentId}`);
   }
-  // addUser(data:any){    return this.http.post(this.apiUrl+"/User/Register",data)}
-  
-  // findUser(username:string){
-  //   return this.http.get(this.apiUrl+"/User/FindUser/"+username)
-  // }
+  getId(){
+    return this.id
+  }
+  setId(claimId:number){
+    this.id=claimId
+  }
 }

@@ -8,7 +8,7 @@ import { Employee } from '../models/employee';
 })
 export class EmployeeService {
   private apiUrl = 'https://localhost:7029/api'; 
-
+  private id:number=0;
   constructor(private http: HttpClient) {}
 
   getAllEmployees(): Observable<Employee[]> {
@@ -29,5 +29,11 @@ export class EmployeeService {
 
   deleteEmployee(employeeId: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/Employee/${employeeId}`);
+  }
+  getId(){
+    return this.id
+  }
+  setId(claimId:number){
+    this.id=claimId
   }
 }

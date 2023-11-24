@@ -41,6 +41,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { UpdateClaimComponent } from './update-claim/update-claim.component';
 import { UpdateCustomerComponent } from './update-customer/update-customer.component';
 import { AddSchemeDetailsComponent } from './add-scheme-details/add-scheme-details.component';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { UpdateAgentComponent } from './update-agent/update-agent.component';
 
 
 const routes: Routes = [
@@ -84,6 +86,8 @@ const routes: Routes = [
   {path:'update-claim/:id',component:UpdateClaimComponent},
   {path:'update-customer',component:UpdateCustomerComponent},
   {path:'add-scheme-details',component:AddSchemeDetailsComponent},
+  {path:'update-employee/:id',component:UpdateEmployeeComponent},
+  {path:'update-agent/:id',component:UpdateAgentComponent},
   {
     path:"weather",
     component:WeatherInfoComponent

@@ -74,6 +74,7 @@ export class CustomerService {
   getCustomersByAgentId(agentId: number): Observable<Customer[]> {
     return this.http.get<Customer[]>(`${this.apiUrl}/Customer/getByAgentId/${agentId}`);
   }
+  
   // addUser(data:any){    return this.http.post(this.apiUrl+"/User/Register",data)}
 
   // findUser(username:string){

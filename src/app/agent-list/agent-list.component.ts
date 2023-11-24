@@ -38,6 +38,7 @@ export class AgentListComponent implements OnInit {
   }
 
   editAgent(agentId: number): void {
+    debugger
     // Navigate to the update agent page with the agent ID
     this.router.navigate(['/update-agent', agentId]);
   }

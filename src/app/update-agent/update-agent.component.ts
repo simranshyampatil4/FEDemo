@@ -2,9 +2,12 @@
 
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AgentService } from '../services/agent.service';
 import { Agent } from '../models/agent';
+import { ActivatedRoute, Router } from '@angular/router';
+import { TemporaryDataService } from '../services/temporary-data.service';
+import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-update-agent',
@@ -12,92 +15,72 @@ import { Agent } from '../models/agent';
   styleUrls: ['./update-agent.component.css']
 })
 export class UpdateAgentComponent {
-  updateAgentForm = new FormGroup({
-    agentId: new FormControl(''),
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    qualification: new FormControl(''),
-    email: new FormControl(''),
-    mobileNo: new FormControl(''),
-    commissionEarned: new FormControl('')
-  });
+  agentForm!: FormGroup; // Note the non-null assertion operator here
+  agentId: number = 0;
+  userRole:string=''
+  constructor(
+    private fb: FormBuilder,
+    private router:Router,
+    private route: ActivatedRoute,
+    private agentService: AgentService,private temporaryData:TemporaryDataService
+  ) {this.userRole=temporaryData.getRole()
+    console.log(this.userRole)}
 
-  agentData: any;
-
-  constructor(private agentService: AgentService) {
-    this.fetchAgents();
-  }
-
-  fetchAgents(): void {
-    this.agentService.getAllAgents().subscribe(
-      {
-        next:(data)=>{
-        this.agentData=data
-        console.log(this.agentData)
-      },
-      error:(errorResponse:HttpErrorResponse)=>{
-        console.log(errorResponse); 
-      }
+    ngOnInit(): void {
+      this.initForm();
+      this.route.params.subscribe(params => {
+        const idParam = +params['id'];
+        if (!isNaN(idParam)) {
+          this.agentId = idParam;
+          this.fetchAgentDetails();
+        } else {
+          console.error('Invalid id parameter:', idParam);
+          // Handle the case where 'id' is not a valid number
+        }
+      });
     }
-      // (data: Agent[]) => {
-      //   this.agentData = data;
-      // },
-      // error => {
-      //   console.error('Error fetching agents:', error);
-      // }
-    );
-  }
-
-  getSelectedValue(event: any): void {
-    const selectedAgentId = +event.target.value;
-    if (selectedAgentId) {
-      this.agentService.getAgentById(selectedAgentId).subscribe(
-        (data: Agent) => {
-          this.updateAgentForm.patchValue(this.agentData);
+  
+    initForm(): void {
+      this.agentForm = this.fb.group({
+        agentId: [0, Validators.required],
+        firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      qualification: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      mobileNo: ['', Validators.required],
+      // userId: [0],
+      userName:[''],
+      password:[''],
+      commissionEarned: [0],
+      });
+    }
+  
+    fetchAgentDetails(): void {
+      this.agentService.getAgentById(this.agentId).subscribe(
+        (data) => {
+          // Update the form with the fetched plan details
+          this.agentForm.patchValue(data);
         },
-        error => {
-          console.error('Error fetching agent details:', error);
+        (error) => {
+          console.error('Error fetching Agent details:', error);
         }
       );
     }
-  }
-
-  updateAgentData(agentData:any){
-    this.agentService.updateAgent(agentData).subscribe({
-      next: (result) => {
-        alert("Agent updated successfully");
-        console.log(result)
-      },
-      error: (errorResponse: HttpErrorResponse) => {
-        console.log(errorResponse)
+  
+    async updateAgent(): Promise<void> {
+      try {
+        const updatedAgent = await lastValueFrom(
+          this.agentService.updateAgent(this.agentForm.value)
+        );
+        console.log('Agent updated:', updatedAgent);
+  
+        // Display an alert to the user
+        alert('Agent updated successfully!');
+      } catch (error) {
+        console.error('Error updating Agent:', error);
+  
+        // Display an error alert to the user
+        alert('Error updating Agent. Please try again.');
       }
-    })
-    console.log(agentData)
-    // const agentId = this.updateAgentForm.value.agentId;
-    // const updatedAgentData = this.updateAgentForm.value;
-
-    // this.agentService.updateAgent(agentId, updatedAgentData).subscribe({
-    //   next: (result) => {
-    //     alert("Agent updated successfully");
-    //     console.log(result);
-    //   },
-    //   error: (errorResponse: HttpErrorResponse) => {
-    //     console.log(errorResponse);
-    //   }
-    // });
-  }
-
-  deleteAgent(agentId: number): void {
-    this.agentService.deleteAgent(agentId).subscribe({
-      next: (result) => {
-        alert("Agent deleted successfully");
-        console.log(result);
-        // You might want to fetch agents again after deletion
-        this.fetchAgents();
-      },
-      error: (errorResponse: HttpErrorResponse) => {
-        console.log(errorResponse);
-      }
-    });
-  }
+    }
 }

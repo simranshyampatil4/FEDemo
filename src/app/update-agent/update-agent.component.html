@@ -1,15 +1,38 @@
-<!-- update-agent.component.html
-<h1>Update Agent</h1>
-<select (change)="getSelectedValue($event)">
-  <option *ngFor="let agent of agentData" [value]="agent.agentId">{{ agent.agentId }}</option>
-</select>
-<form [formGroup]="updateAgent" (ngSubmit)="updateAgentData(updateAgent.value)">
-  <input type="hidden" formControlName="agentId" [(ngModel)]="agent[0].agentId">
-  <input type="text" formControlName="firstName" [(ngModel)]="agent[0].firstName"><br>
-  <input type="text" formControlName="lastName" [(ngModel)]="agent[0].lastName"><br>
-  <input type="text" formControlName="qualification" [(ngModel)]="agent[0].qualification"><br>
-  <input type="email" formControlName="email" [(ngModel)]="agent[0].email"><br>
-  <input type="text" formControlName="mobileNo" [(ngModel)]="agent[0].mobileNo"><br>
-  <input type="text" formControlName="commissionEarned" [(ngModel)]="agent[0].commissionEarned"><br><br>
-  <button type="submit">Update</button>
-</form> -->
+<!-- src/app/add-agent/add-agent.component.html -->
+<div *ngIf="userRole=='Admin'">
+    <app-admin-navbar></app-admin-navbar>
+  </div>
+  <div *ngIf="userRole=='Agent'">
+    <app-agent-navbar></app-agent-navbar>
+  </div>
+  <div class="update-agent-container">
+    <h2>Update Agent</h2>
+    <form [formGroup]="agentForm" (ngSubmit)="updateAgent()">
+      <label for="firstName">First Name:</label>
+      <input id="firstName" formControlName="firstName" required>
+  
+      <label for="lastName">Last Name:</label>
+      <input id="lastName" formControlName="lastName" required>
+  
+      <label for="qualification">Qualification:</label>
+      <input id="qualification" formControlName="qualification" required>
+  
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" type="email" required>
+  
+      <label for="mobileNo">Mobile Number:</label>
+      <input id="mobileNo" formControlName="mobileNo" required>
+  
+      <!-- <label for="userId">User ID:</label> -->
+      <!-- <input id="userId" formControlName="userId" type="number" [hidden]> -->
+  
+      <!-- <label for="userName">UserName:</label> -->
+      <input id="userName" formControlName="userName" type="hidden">
+  
+      <!-- <label for="password">Password:</label> -->
+      <input id="password" formControlName="password" type="hidden" >
+  
+      <input id="commissionEarned" formControlName="commissionEarned" type="hidden" >
+      <button type="submit">Update Agent</button>
+    </form>
+  </div>

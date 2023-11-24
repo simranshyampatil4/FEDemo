@@ -46,6 +46,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { UpdateClaimComponent } from './update-claim/update-claim.component';
 import { UpdateCustomerComponent } from './update-customer/update-customer.component';
 import { AddSchemeDetailsComponent } from './add-scheme-details/add-scheme-details.component';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { UpdateAgentComponent } from './update-agent/update-agent.component';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -90,7 +92,9 @@ import { AddSchemeDetailsComponent } from './add-scheme-details/add-scheme-detai
     AdminDashboardComponent,
     UpdateClaimComponent,
     UpdateCustomerComponent,
-    AddSchemeDetailsComponent
+    AddSchemeDetailsComponent,
+    UpdateEmployeeComponent,
+    UpdateAgentComponent
     
   ],
   imports: [
