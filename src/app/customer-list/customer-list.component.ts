@@ -35,26 +35,37 @@ export class CustomerListComponent {
     );
   }
 
-  editCustomer(customerId: number): void {
-    // Navigate to the update agent page with the agent ID
-    this.router.navigate(['/update-customer', customerId]);
-  }
   // editCustomer(customerId: number): void {
   //   // Navigate to the update agent page with the agent ID
   //   this.router.navigate(['/update-customer', customerId]);
-  // }
-
-  deleteCustomer(customerId: number): void {
-    // Implement the logic to delete the agent using the agent service
-    // For example:
-    this.customerService.deleteCustomer(customerId).subscribe(
-      () => {
-        // Update the agents list after successful deletion
-        this.fetchCustomers();
-      },
-      error => {
-        console.error('Error deleting agent:', error);
-      }
-    );
+ // }
+ editCustomer(customerId: number): void {
+  if (!isNaN(customerId)) {
+    // Navigate to the update customer page with the customer ID
+    this.router.navigate(['/update-customer', customerId]);
+  } else {
+    console.error('Invalid customer ID:', customerId);
+    // Handle the case where customerId is not a valid number
   }
 }
+
+
+deleteCustomer(customerId: number): void {
+  // Implement the logic to delete the agent using the agent service
+  // For example:
+  this.customerService.deleteCustomer(customerId).subscribe(
+    () => {
+      // Update the agents list after successful deletion
+      this.fetchCustomers();
+    },
+    error => {
+      console.error('Error deleting agent:', error);
+    }
+  );
+}
+
+
+
+ }
+
+  

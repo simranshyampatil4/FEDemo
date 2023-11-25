@@ -57,7 +57,7 @@ export class CustomerService {
   }
 
   getCustomerById(customerId: number): Observable<Customer> {
-    return this.http.get<Customer>(`${this.apiUrl}/Customer/${customerId}`);
+    return this.http.get<Customer>(`${this.apiUrl}/Customer?Id=${customerId}`);
   }
 
   addCustomer(customer: Customer): Observable<Customer> {
@@ -69,7 +69,7 @@ export class CustomerService {
   }
 
   deleteCustomer(customerId: number): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/agent/${customerId}`);
+    return this.http.delete<any>(`${this.apiUrl}/Customer/${customerId}`);
   }
   getCustomersByAgentId(agentId: number): Observable<Customer[]> {
     return this.http.get<Customer[]>(`${this.apiUrl}/Customer/getByAgentId/${agentId}`);
