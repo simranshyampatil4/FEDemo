@@ -4,17 +4,15 @@ import { Router } from '@angular/router';
 import { TemporaryDataService } from '../services/temporary-data.service';
 
 @Component({
-  selector: 'app-admin-navbar',
-  templateUrl: './admin-navbar.component.html',
-  styleUrl: './admin-navbar.component.css'
+  selector: 'app-employee-navbar',
+  templateUrl: './employee-navbar.component.html',
+  styleUrl: './employee-navbar.component.css'
 })
-export class AdminNavbarComponent {
+export class EmployeeNavbarComponent {
   constructor(private router:Router,private temporarydata:TemporaryDataService){
   }
   setRole(){
-    console.log("hih")
-    //debugger
-    this.temporarydata.setRole('Admin')
+    this.temporarydata.setRole('Employee')
     // console.log(this.temporarydata.getRole)
     
   }

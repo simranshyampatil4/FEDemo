@@ -5,6 +5,9 @@
 <div *ngIf="userRole=='Agent'">
   <app-agent-navbar></app-agent-navbar>
 </div>
+<div *ngIf="userRole=='Employee'">
+  <app-employee-navbar></app-employee-navbar>
+</div>
 <div class="insurance-scheme-list-container">
     <h2>Insurance Scheme List</h2>
     <table class="table table-bordered">

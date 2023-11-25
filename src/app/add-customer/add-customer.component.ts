@@ -9,6 +9,7 @@ import { TemporaryDataService } from '../services/temporary-data.service';
 import { Agent } from '../models/agent';
 import { AgentService } from '../services/agent.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-customer',
@@ -23,6 +24,7 @@ export class AddCustomerComponent implements OnInit {
     private fb: FormBuilder,
     private customerService: CustomerService,
     private agentService: AgentService,
+    private router:Router,
     private temporaryData:TemporaryDataService,
   ) { this.userRole=temporaryData.getRole()
     console.log(this.userRole)
@@ -55,6 +57,7 @@ export class AddCustomerComponent implements OnInit {
   
         // Display an alert to the user
         alert('Customer added successfully!');
+        this.router.navigateByUrl("/admin-dashboard")
   
         // Optionally, you can reset the form or perform any other actions here
         this.customerForm.reset();

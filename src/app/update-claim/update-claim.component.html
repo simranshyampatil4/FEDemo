@@ -5,6 +5,9 @@
 <div *ngIf="userRole=='Agent'">
   <app-agent-navbar></app-agent-navbar>
 </div>
+<div *ngIf="userRole=='Employee'">
+  <app-employee-navbar></app-employee-navbar>
+</div>
 <div class="update-claim-container">
     <h2>Update Claim</h2>
     <form [formGroup]="claimForm" (ngSubmit)="updateClaim()">
