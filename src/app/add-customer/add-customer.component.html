@@ -5,6 +5,9 @@
     <div *ngIf="userRole=='Agent'">
       <app-agent-navbar></app-agent-navbar>
     </div>
+    <div *ngIf="userRole=='Employee'">
+      <app-employee-navbar></app-employee-navbar>
+    </div>
     <div class="add-customer-container">
       <h2>Add Customer</h2>
       <form [formGroup]="customerForm" (ngSubmit)="addCustomer()">
@@ -50,7 +53,7 @@
         <label >Add Agent</label>
         <select  id="agent" name="agent" formControlName="agentId">
           
-          <option [ngValue]="null" disabled>Choose Insurance Type</option>
+          <option [ngValue]="null" disabled>Choose Your Agent</option>
           <option *ngFor="let agent of agents" value="{{agent.agentId}}">{{agent.firstName}}
            </option>
           

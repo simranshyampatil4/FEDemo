@@ -49,7 +49,7 @@ export class LoginComponent {
           if (this.user.roleName == 'Admin') {
             this.router.navigateByUrl('/admin-dashboard');
           }else if(this.user.roleName == 'Employee') {
-            this.router.navigateByUrl('/employee');
+            this.router.navigateByUrl('/employee-dashboard');
           }
           else if(this.user.roleName == 'Agent') {
             this.router.navigateByUrl('/agent');

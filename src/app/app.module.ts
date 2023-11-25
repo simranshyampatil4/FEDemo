@@ -48,6 +48,8 @@ import { UpdateCustomerComponent } from './update-customer/update-customer.compo
 import { AddSchemeDetailsComponent } from './add-scheme-details/add-scheme-details.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import { UpdateAgentComponent } from './update-agent/update-agent.component';
+import { EmployeeNavbarComponent } from './employee-navbar/employee-navbar.component';
+import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -94,7 +96,9 @@ import { UpdateAgentComponent } from './update-agent/update-agent.component';
     UpdateCustomerComponent,
     AddSchemeDetailsComponent,
     UpdateEmployeeComponent,
-    UpdateAgentComponent
+    UpdateAgentComponent,
+    EmployeeNavbarComponent,
+    EmployeeDashboardComponent
     
   ],
   imports: [

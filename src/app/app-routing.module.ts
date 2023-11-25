@@ -43,6 +43,8 @@ import { UpdateCustomerComponent } from './update-customer/update-customer.compo
 import { AddSchemeDetailsComponent } from './add-scheme-details/add-scheme-details.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import { UpdateAgentComponent } from './update-agent/update-agent.component';
+import { EmployeeNavbarComponent } from './employee-navbar/employee-navbar.component';
+import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
 
 
 const routes: Routes = [
@@ -88,6 +90,8 @@ const routes: Routes = [
   {path:'add-scheme-details',component:AddSchemeDetailsComponent},
   {path:'update-employee/:id',component:UpdateEmployeeComponent},
   {path:'update-agent/:id',component:UpdateAgentComponent},
+  {path:'employee-navbar',component:EmployeeNavbarComponent},
+  {path:'employee-dashboard',component:EmployeeDashboardComponent},
   {
     path:"weather",
     component:WeatherInfoComponent

@@ -6,6 +6,9 @@
   <div *ngIf="userRole=='Agent'">
     <app-agent-navbar></app-agent-navbar>
   </div>
+  <div *ngIf="userRole=='Employee'">
+    <app-employee-navbar></app-employee-navbar>
+  </div>
 <div class="add-insurance-plan-container">
     <h2>Add Insurance Plan</h2>
     <form [formGroup]="insurancePlanForm" (ngSubmit)="addInsurancePlan()">
