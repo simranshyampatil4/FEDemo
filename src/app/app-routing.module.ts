@@ -86,7 +86,7 @@ const routes: Routes = [
   {path:'admin-navbar',component:AdminNavbarComponent}, 
   {path:'admin-dashboard',component:AdminDashboardComponent},
   {path:'update-claim/:id',component:UpdateClaimComponent},
-  {path:'update-customer',component:UpdateCustomerComponent},
+  {path:'update-customer/:id',component:UpdateCustomerComponent},
   {path:'add-scheme-details',component:AddSchemeDetailsComponent},
   {path:'update-employee/:id',component:UpdateEmployeeComponent},
   {path:'update-agent/:id',component:UpdateAgentComponent},
